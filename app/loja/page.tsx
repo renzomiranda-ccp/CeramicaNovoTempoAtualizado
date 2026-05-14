@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Filter, SlidersHorizontal, X, Grid3X3, LayoutGrid } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -8,7 +8,7 @@ import { ProductCard } from '@/components/product/product-card'
 import { products, categories, colors, lines, filterProducts } from '@/lib/data/products'
 import { cn } from '@/lib/utils'
 
-export default function LojaPage() {
+  function LojaContent() {
   const searchParams = useSearchParams()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [gridSize, setGridSize] = useState<'small' | 'large'>('large')
