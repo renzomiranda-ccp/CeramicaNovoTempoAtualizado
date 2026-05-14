@@ -393,3 +393,10 @@ import { cn } from '@/lib/utils'
     </div>
   )
 }
+export default function LojaPage() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <LojaContent />
+    </Suspense>
+  )
+}
